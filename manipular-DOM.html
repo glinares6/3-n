@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular el DOM</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>DOM traversing</h1>
+    <!-- recorrer el DOM 
+        HIJOS
+            childNode ->Devuelve todos los nosdos hijos
+            childNodes[n] -> elige a un hijo personalizado
+            children -> devuelve solo elementos
+            firstChild -> te devuelve el promer elemento
+            firstElementCHild  -> te devuelve el primer elemento  hijo
+            lastChild -> te debuelve el ultimoj elemento
+            lastElementChild -> te devuelve el ultimo elemento hijo
+            hasChildNodes() -> muestra si tiene hijos o no en boolean
+    HERMANOS
+        nextsibling -> muestra  el siguiente  elemento del hermano
+        nextElementSibling ->  muestra todo el elemento del siguiente hermano
+        previousSibling -> muestra el anterior elemento del elemetno
+        previousElementSibling -> muestra el anaterior lemento del siguiente hermano
+    PADRES
+        parentNode->devuelve el nodo que sea papá
+        parentElement -> retorna al elemento padre
+    -->
+
+    <!-- <div id="parent">
+        <div class="child">Hijo1</div>
+        <div class="child">Hijo2<div class="grandson">Nieto 1</div>
+            <div class="grandson" id="grandson-2">Nieto 2<p>nie</p></div>
+            <div class="grandson">Nieto 3</div></div>
+        <div class="child">Hijo3</div>
+        <div class="child">Hijo4</div></div> 
+    -->
+
+    <h1>Insertar elementos</h1>
+        <!-- 
+        appendChild -> inserta un elemento al final del su etiqueta
+        insertBefore(new, nextNode) -> inserta un nuevo elemento antes del nextNode que tu le asiges 
+        insertAdjancent -> tomas una posicion y agregas un hijo
+            metodos
+                insertAdjacentElement(position,el)
+                insertAdjacentHTML(position,html)
+                insertAdjacentText(position,text)
+            posiciones
+                beforebegin -> antes de que comience en elemento (hermano anterior)
+                afterbegin  ->despues de que comience el elemento (primer hijo)
+                beforeend .> antes de que acabe un elemeto  (ultimo hijo)
+                afterend -> despues de que acabe el elemtno  (hetmano siguiente)
+        replaceChild(newChild,oldChild)
+        -->
+<!-- 
+        <h1>ejercicio con insertBefore</h1>
+        <article id="post">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi et laborum accusamus obcaecati consectetur error, harum, unde fugiat illo minus corporis. Maiores culpa ipsa fugit, dolor voluptatum nihil cumque?</p>
+        </article> -->
+
+        <!-- INSERTAR ELEMETNO Y HTML EN EL DOM CON ADJANCENT  -->
+        <div id="parent">
+            <h2>insertAdjancent</h2>
+        </div>
+        <h2>Metodos deljquery</h2>
+        <!-- before() ->hermano anterior
+        after() -> hermano siuiente
+        prepend() -> primer hijo
+        append() -> ultimo hijo
+        replaceWith()  ->  sustituye el elemento por otro.
+    -->
+    <h1>clonar y eliminar</h1>
+<!-- cloneNode -> clonar los elementos del don y  pegarlo en otra ubicación del mismo
+       remove -> quitar elementos del OOM
+         -->
+
+         <h1>crear elementos y fragmentos</h1>
+         <!-- createDocumentFragment -> Guarda en memoria todo el DOM que se selecciono
+            createElement ->  guarda en memoria el elemento 
+        -->
+         <div id="teacher-list">
+            
+        </div>
+
+        <h1>Templates HTML</h1>
+        <template id="template">
+            <h2></h2>
+            <p></p>
+        </template> 
+
+        <div id="content">
+
+        </div>
+
+        <h1>CSSON</h1>
+        
+        <!--
+            style -> devuelve los estilos css
+            matchMedia() -> captura el tamaño para luego realizar una acción
+            getCompputedStyle() ->  muestra todos los estilos calculados
+            getBoundingClientReact().oropiedades  -> modifica el tamaño real de manera dinamica
+            naturalWidth ->detecta el tamaño real horizontal
+            naturalHeight -> detecta el tamaño real vertical
+        -->
+    <h1>EDtean</h1>
+    <p>tu futuro te esta esperando</p>
+    
+    <script src="js/manipular-DOM.js"></script>
+</body>
+</html>

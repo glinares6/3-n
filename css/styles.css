@@ -1,0 +1,86 @@
+/* EVEMTO DEL TECLADO */
+
+body{
+
+    font-size: 2em;
+    background: #fafafa;
+}
+
+.imput{
+    font-size: 2em;
+    padding: 2em;    
+}
+
+/* EVENTO DE MOVER LA PELOTITA */
+
+/* display:flex; */
+/* body{
+    margin: 0;
+    min-height:100vh;
+    padding-bottom: 100em;
+
+} */
+
+/* .ball{
+    --size:60px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: red;
+    margin: auto;
+
+}
+
+form{
+    padding: 1em;
+} */
+input{
+    display:block;
+    margin-bottom: 1em;
+}
+/* [type="checkbox"]{
+    display: inline-block;
+} */
+
+    /* .video{
+        width:640px;
+        height:360px;
+        display: block;
+        margin-bottom: 1em;
+    } */
+
+/* div{
+    padding: 2em;
+    border: 1px solid rgb(15, 15, 15);
+} */
+/* 
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-gap: 1em;
+}
+.img img{
+    width: 100%;
+    display:block;
+} */
+
+/* #team{
+    background: yellow;
+    height:100px;
+    text-align: center;
+    line-height: 100px;
+    margin : 1em 0;
+    width: 100%;
+
+} */
+/* div{
+    border: 1px solid red;
+    padding: 1em;
+    margin:1em;
+} */
+/* h1{
+    font-size:2em
+}
+p{
+    font-size: .5em;
+} */

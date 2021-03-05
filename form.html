@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Eventos de formulario</title>
+</head>
+<body>
+    <h1 c>Eventos de formulario</h1>
+    
+    <!-- submit -> detecta el envio de todo el formulario 
+        change -> ocurre cuando un input cambia de valor 
+        focus ->  cuando seleccionas/click un campo
+        bur ->  cuando sueltas esa seleccion del campo
+        reset ->    cuando reseteas el formulario
+    -->
+    <!-- target -> el elemento donde se dispara el evento -->
+    <form action="#" id="form">
+        <input type="text" id="name" placeholder="Tu nombre">
+    <input type="password" id="password" placeholder="Tu contraseña">
+    <label >
+        <input type="checkbox" id="remenberPassword"> Recordar mi contraseña  
+    </label>
+    <input type="submit">
+</form>
+
+<h2>eventos de DOM</h2>
+    <!-- DOM contentLoader -> cuando carga todo el DOM luego se ejecuta el script -->
+    <h2>eventos del navegador</h2>
+    <!-- 
+        load-> ocurre cuando carga toda la pagina 
+                incluye eventos externos como apis, imagenes,videos
+        scroll -> muestra el desplazamiento del documento|
+        resize -> muestra el tamano del documento
+    -->
+    <h2>eventos multimedia</h2>
+    <!-- play -> reproduce un video
+    pause -> detiene el video
+    
+    
+-->
+
+<!-- <video id="video" class="video"  src="video/muestra.mp4" controls></video> -->
+<!-- <video id="video" class="video"  src="video/muestra.mp4" ></video> -->
+<h2>propagación de eventos</h2>
+<!-- stopPropagation -> evita que se ejecuten varios eventos a la vez 
+                son utiles en modales,mensajes de primer y segundo nivel 
+-->
+    <!-- <div id="div-1">
+        <div id="div-2" >
+            <div id="div-3">
+                click
+            </div>
+        </div>
+    </div> -->
+
+
+<!-- DELEGACIÓN DE EVENTOS  -->
+<!-- se ubica al elemento padre y luego se seleccionan sus hijos -->
+
+    <div class="gallery" id="gallery">
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+        <div class="img">
+            <img src="https://edteam-media.s3.amazonaws.com/courses/small/c574aade-f5b4-42ae-9d92-6b05e7919f4d.png" alt="">
+        </div>
+    </div>
+
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+    <script src="js/form.js"></script>
+</body>
+</html>

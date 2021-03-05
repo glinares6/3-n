@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>objeto window</h1>
+    <!-- objetos
+        console -> entrega en consola información
+        navigator -> nos da información sobre el navegador
+        locarion  ->url que nos da información de la pagina que visitas
+        history -> información sobre el historial del navegador
+        screen -> información del alto y el nacho
+    metodos
+        open(url,name,'height width')  -> abre una nuva ventana con lso datos que se envian
+        close() -> solo se cierra  la ventana si previamente se uso  el open()
+        alert(mensaje)  -< manda un mensaje
+        confirm(mensaje) -> modal de confirmación 
+        prompt(mensaje) -< mandar un mensaje y guardar la reespuesta en una variable
+     -->
+        <!-- <h1>Responsive tester</h1>
+        <p>introduce los daros de un sitio web para probar  si es responsive</p>
+        <form action="#" id="responsive-tester-form">
+            <label >Introducir URL 
+                <input id="url">
+            </label>
+            <label >Introducir el ancho  
+                <input id="width">
+            </label>
+            <label >Introducir el alto 
+                <input id="height">
+            </label>
+            <button>pruebalo</button>
+        </form>
+         -->
+
+         <h1>objeto location</h1>
+         <!-- propiedades
+            href -> url actual
+            host ->  dominio  + puerto
+            hostmane -> identificar el dominio
+            port -> puerto
+            protocol -> http https
+            origin -> protocolo  + dominio
+            hash -> enlaces internos
+            pathmane ->  ruta interna luego del dominio
+
+        metodos
+            reload() -> recarga la pagina actual
+            assign(url) -> recarga la pagina enviado por parametro
+            replace(url) ->  recarga la pagina por parametro
+        -->
+
+        <h1>objeto history</h1>
+            <!-- 
+            propieades 
+                length -> cantidad de elementos de atras o adelante ,incluye la pagina actual
+
+            metodos
+                back() -> paso para atras de la ruta 
+                forward() -> paso para addelante de la ruta 
+                go(position)  -1 back  1 forward elige cuantos saltos recorrera
+                 -->
+        <h1>objeto navegador</h1>
+        <!-- detectar navegador
+            navigator -> nuestra información del navegador,
+    *****es util para saber si es soportado las propiedades del css, javacript *****
+            no es buena idea .es 90 a 2000 styles
+        detectar caracteristicas
+                CSS -> @supports
+                Javascript -> in   pregunta si una propiedad existe en un objeto
+                modernizr  -> permite saber si el navegador tiene caracteristicas que estas usando
+            -->
+            <h1>timers</h1>
+            <!-- acciones que repitan periocicamente
+        setTimeOut(callback,ms) -> despues recargar el navegador la funcion  se ejecuta 
+
+        setInterval(callback,ms) -> ejecuta una funcion varias veces con un intervalo ejecutado en el segundo parametro
+        
+            clearInterval(interval) 
+        -->
+        <div id="clock"></div>
+            <h1>Date</h1>
+        <!-- instanciar
+            newDate()
+            newDate(Year,month,day)
+            newDate(Year,month,day,hours,minutes,seconds)
+            newDate(string)
+
+        metodos
+            getFullYears()
+            getMinutes()
+            getSeconds()
+            getDay()
+            getMonth()
+            getTime() -> milisegundos desde el 1 de enero de 1970
+            getTimeZomeOffSet() 
+            ejercico
+                -> crea una cuenta regresiva con js puro en yt
+        
+        -->
+
+        
+
+        <script src="js/objeto-window.js"></script>
+</body>
+</html>
